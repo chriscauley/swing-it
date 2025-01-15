@@ -1,44 +1,151 @@
 from django.db import models
 
-class Channel(models.Model):
-  youtube_id = models.CharField(max_length=24, null=True, blank=True)
-  twitch_id = models.CharField(max_length=24, null=True, blank=True)
-  name = models.CharField(max_length=30)
-  icon = models.ImageField(upload_to="channel_icons")
-  __str__ = lambda self: self.name
+_choices = lambda x: list(zip(x,x))
 
+LC_OUT_HEART = [
+    "lc_chin",
+    "lc_backpack",
+    "lc_elbows",
+    "lc_cast",
+    "lc_swing",
+]
 
-class Video(models.Model):
-  __str__ = lambda self: self.title
-  class Meta:
-    ordering = ('order',)
+LC_FMOON = [
+    "lc_sky",
+    "lc_out",
+    "lc_earth",
+    "lc_chest",
+]
 
-  SOURCES = _choices(['youtube', 'twitch'])
-  source = models.CharField(max_length=16, choices=SOURCES, default="youtube")
-  thumbnail = models.ImageField(upload_to="video_thumbnails", null=True, blank=True)
-  external_id = models.CharField(max_length=24)
-  title = models.CharField(max_length=255)
-  label = models.CharField(max_length=64, null=True, blank=True)
-  channel = models.ForeignKey(Channel, models.CASCADE)
-  def default_data():
-    return {
-      'items': [],
-      'room_xys': [],
-    }
-  data = models.JSONField(default=default_data, blank=True)
+ARM_POSES = [
+    *LC_OUT_HEART,
+    "lc_fmoulinet",
+    "lc_bmoulinet",
+    "lc_wing", # "air-plane" arms
+    "plank", # pushup
+]
 
-  @property
-  def channel_name(self):
-    return self.channel.name
+LEG_POSES = [
+    "march",
+    "stand",
+    "skate",
+    "back", # knee up or "high" lunge
+    "knee", # knee down or "tabletop"
+    "lc_tree",
+    "squat"
+]
 
-  @property
-  def channel_icon(self):
-    return self.channel.icon.url
+TORSO_POSES = [
+    "cat",
+    "cow",
+    "neutral",
+    "bowed",
+    "twist",
+]
 
-  @property
-  def thumbnail_url(self):
-    return self.thumbnail.url
+FACING_POSES = [
+    "turn_audience",
+    "turn_stage",
+]
 
+LIBMS = _choices([
+    "left-arm",
+    "right-arm",
+    "left-leg",
+    "right-leg",
+    "torso",
+    "facing",
+])
 
-class Dance(models.Model):
-    pass
+## sample moves
+LC_MOON = LC_FMOON[::-1]
+
+LC_IN_HEART = LC_OUT_HEART[::-1]
+
+# Glitch heart switches backpack and elbows
+# result is farward cast instead of side cast
+LC_GLITCH_IN_HEART = [
+    "lc_chin",
+    "lc_elbows",
+    "lc_backpack",
+    "lc_cast",
+    "lc_swing",
+]
+LC_GLITCH_OUT_HEART = LC_GLITCH_IN_HEART[::-1]
+
+LC_TWISTED_SPIN_MARCH = [
+    "cat"
+    "right-arm+lc_backpack",
+    "*right-leg+lc_march",
+    "left-arm+lc_wing",
+]
+LC_TWISTED_SPIN_SKATE = [
+    "bowed",
+    "right-arm+lc_wing",
+    "*right-leg+lc_skate",
+    "left-arm+lc_backpack",
+]
+
+LC_TWISTED_SPIN_ROTATE = [
+    # should start in march, how to enforce that?
+    "spin_audience",
+    "right-arm+lc_sky",
+    "left-arm+lc_earth",
+    *LC_TWISTED_SPIN_SKATE,
+]
+
+LC_TWISTED_SPIN = [
+    LC_TWISTED_SPIN_MARCH,
+    LC_TWISTED_SPIN_SKATE,
+    LC_TWISTED_SPIN_MARCH,
+    LC_TWISTED_SPIN_SKATE,
+    LC_TWISTED_SPIN_MARCH,
+    LC_TWISTED_SPIN_SKATE,
+    LC_TWISTED_SPIN_MARCH,
+
+    # these two should happen in one bar
+    LC_TWISTED_SPIN_ROTATE,
+]
+
+## ---- Simple spin ---- ##
+LC_BACKPACK = [
+    "right-leg+stand",
+    "right-arm+lc_backpack",
+    "left-leg+stand",
+    "left-arm+lc_backpack",
+]
+
+LC_AIRPLANE = [
+    "right-arm+lc_wing",
+    "left-arm+lc_wing",
+    "right-leg+stand",
+    "left-leg+stand",
+]
+
+LC_HIGH_LUNGE = [ # "backpack lunge"
+    "right-arm+lc_backpack",
+    "left-arm+lc_backpack",
+    "right-leg+back",
+]
+
+LC_LIZARD = [
+    "right-leg+knee",
+    "right-arm+lc_wing",
+    "left-arm+lc_wing",
+    "bowed",
+]
+
+LC_SIMPLE_SPIN = [] # twisted spin but with both arms in sync
+## TODO
+LC_LOW_LUNGE = [] # "lizard pose"
+LC_PARALLEL_HEART = []
+LC_TWISTED_OUT_HEART = [] # out hearts with phase offset
+LC_TWISTED_IN_HEART = [] # in hearts with phase offset
+LC_FORWARD_CAST = []
+LC_SIDE_CAST = []
+LC_HALF_CAST = []
+LC_FOREWAD_SWING = [] # arms in back+front and rotate, eyes follow backarm
+LC_SQUAT_HEART = []
+MOUNTAIN_CLIMBERS = []
+ELBOW_TO_KNEE = []
+ELBOW_TO_KNEE_HEART = []

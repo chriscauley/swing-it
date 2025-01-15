@@ -1,0 +1,31 @@
+* models
+** Video - A youtube video
+   - can contain several songs
+** Song - A published work of music
+   - Can be in different videos
+   - Can have many different routines
+** Routine (Dance) - A set of moves to do along to a song (or video)
+   - With a song this can be done to any video containing that song
+   - When connected to a video without a song implies a yoga, weight, pilates, etc routine
+** Verse (prayer? flow?) - A short set of moves
+   - Designed to be repeatable (eg "do this every chorus of this song")
+   - Can containe repeated sub elements (eg "moves 1-4 are step, squat, step, squat" and "repeat 1-4" then "repeat 1-4" etc)
+** Motion!?!??!
+   - Do I want to have a intermediate between verse and pose?
+   - This would be something like "outward heart" or "hammer curl"
+   - Without this an IC heart would have to be a whole verse or be reconstructed every time
+** Pose - A position the body can hold
+   - Downward dog, IC proud lizard, IC-Y, etc
+** Sub Pose - pose for individual limbs
+   - Ed "right arm under chin"
+   - We might want to cut out pose and have a motion be a series of sub-poses
+** Performance - A user did a thing
+   - FK to video
+   - FK to user
+   - data field with map to completion, progress, etc
+* MVP
+  - Just track exercise on youtube workout videos
+  - A way to add a video from the interface
+  - A video selector
+  - Complete a video to get a performance
+  - Interface for manually adding performances

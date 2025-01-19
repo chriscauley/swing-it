@@ -2,4 +2,10 @@ import { createApp } from 'vue'
 import './css/index.css'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import store from '@/store'
+
+const app = createApp(App)
+  .use(store)
+
+app.config.unwrapInjectedRef = true
+app.mount('#app')

@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from django.http import JsonResponse
 
-# Create your views here.
+from .poses import LIMB_BY_POSE
+
+
+def pose(request):
+    return JsonResponse(LIMB_BY_POSE)

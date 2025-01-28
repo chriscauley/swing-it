@@ -1,7 +1,6 @@
 <template>
-  <div>
-{{pose}}
-  </div>
+  <router-view />
+  <unrest-ui />
 </template>
 
 <script>

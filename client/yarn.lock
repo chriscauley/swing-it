@@ -227,6 +227,11 @@
   resolved "https://registry.npmjs.org/@pkgjs/parseargs/-/parseargs-0.11.0.tgz"
   integrity sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==
 
+"@popperjs/core@^2.11.8":
+  version "2.11.8"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.8.tgz#6b79032e760a0899cd4204710beede972a3a185f"
+  integrity sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==
+
 "@rollup/rollup-android-arm-eabi@4.30.1":
   version "4.30.1"
   resolved "https://registry.yarnpkg.com/@rollup/rollup-android-arm-eabi/-/rollup-android-arm-eabi-4.30.1.tgz#14c737dc19603a096568044eadaa60395eefb809"
@@ -332,6 +337,20 @@
   resolved "https://registry.yarnpkg.com/@unrest/tailwind/-/tailwind-0.1.25.tgz#50943973cf031177980240e60974ad80f3a089d9"
   integrity sha512-N6yif38JjVNp/bqFBdpwHV7cF26zbenVoo0C6EetJD+vjupX/KGWM76rQyvD0NRewYbwmQNAMDF7CnsCsnAFAw==
 
+"@unrest/vue-auth@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@unrest/vue-auth/-/vue-auth-0.0.13.tgz#5d93fdb2b9bc8e5e8451c052842c5fc16363aeba"
+  integrity sha512-2EDGPzu6mjbFzl8pWy7V6l+55xpR205IcA0ZUWxrL35WX6XXZc8Dp8F9HISPfCnXYdWHLqWWU49sUQkGVjKViQ==
+
+"@unrest/vue-form@^0.0.21":
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/@unrest/vue-form/-/vue-form-0.0.21.tgz#1675fb8cdfaee37fa0db697d71919b5a125b6eee"
+  integrity sha512-UdAAADOFhFrHiHZnTh466c6X5DrcvXSiNQ3MuWcP4Dw5+HXzLv6Mce5qwDlTbtmvk2599t4XDzZj38NkN/hKPg==
+  dependencies:
+    jsonschema "^1.4.0"
+    lodash.clonedeep "^4.5.0"
+    lodash.pick "^4.4.0"
+
 "@unrest/vue-storage@^0.0.21":
   version "0.0.21"
   resolved "https://registry.npmjs.org/@unrest/vue-storage/-/vue-storage-0.0.21.tgz"
@@ -342,6 +361,16 @@
     local-storage-json "^1.1.0"
     lodash.debounce "^4.0.8"
     querystring "^0.2.1"
+
+"@unrest/vue@^0.2.20":
+  version "0.2.20"
+  resolved "https://registry.yarnpkg.com/@unrest/vue/-/vue-0.2.20.tgz#cf5630248b1b5106e8c076aa8a7cd86f0de6e26d"
+  integrity sha512-AkjQH/DXgKrSgL+kyfC2GbAeyJ1RwKD+OSjM6EqOcspK1SlTZChcq0fmPxKASFZAGEv1/n6oEDtCNWN7QC4qLA==
+  dependencies:
+    dedent "^0.7.0"
+    lodash.clonedeep "^4.5.0"
+    lodash.startcase "^4.4.0"
+    marked "^4.2.4"
 
 "@vitejs/plugin-vue@^5.2.1":
   version "5.2.1"
@@ -389,6 +418,11 @@
   dependencies:
     "@vue/compiler-dom" "3.5.13"
     "@vue/shared" "3.5.13"
+
+"@vue/devtools-api@^6.6.4":
+  version "6.6.4"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.6.4.tgz#cbe97fe0162b365edc1dba80e173f90492535343"
+  integrity sha512-sGhTPMuXqZ1rVOk32RylztWkfXTRhuS7vgAKv0zjqk8gbsHkJ7xfFf+jbySxt7tWObEJwyKaHMikV/WGDiQm8g==
 
 "@vue/reactivity@3.5.13":
   version "3.5.13"
@@ -599,6 +633,11 @@ csstype@^3.1.3:
   version "3.1.3"
   resolved "https://registry.npmjs.org/csstype/-/csstype-3.1.3.tgz"
   integrity sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==
+
+dedent@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/dedent/-/dedent-0.7.0.tgz#2495ddbaf6eb874abb0e1be9df22d2e5a544326c"
+  integrity sha512-Q6fKUPqnAHAyhiUgFU7BUzLiv0kd8saH9al7tnu5Q/okj6dnupxyTgFIBjVzJATdfIAm9NAsvXNzjaKa+bxVyA==
 
 delayed-stream@~1.0.0:
   version "1.0.0"
@@ -831,6 +870,11 @@ jiti@^1.21.6:
   resolved "https://registry.npmjs.org/jiti/-/jiti-1.21.7.tgz"
   integrity sha512-/imKNG4EbWNrVjoNC/1H5/9GFy+tqjGBHCaSsN+P2RnPqjsLmv6UD3Ej+Kj8nBWaRAwyk7kK5ZUc+OEatnTR3A==
 
+jsonschema@^1.4.0, jsonschema@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/jsonschema/-/jsonschema-1.5.0.tgz#f6aceb1ab9123563dd901d05f81f9d4883d3b7d8"
+  integrity sha512-K+A9hhqbn0f3pJX17Q/7H6yQfD/5OXgdrR5UE12gMXCiN9D5Xq2o5mddV2QEcX/bjla99ASsAAQUyMCCRWAEhw==
+
 lilconfig@^3.0.0, lilconfig@^3.1.3:
   version "3.1.3"
   resolved "https://registry.npmjs.org/lilconfig/-/lilconfig-3.1.3.tgz"
@@ -846,10 +890,25 @@ local-storage-json@^1.1.0:
   resolved "https://registry.npmjs.org/local-storage-json/-/local-storage-json-1.1.0.tgz"
   integrity sha512-ZF7I5mKJ7yrirgCCrcfQeztWFOsD30rTNPlAnDkWx7CBewKd0PR65RSWkNvAK+id/7eprMBfmhVjzou/ByUZtw==
 
+lodash.clonedeep@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
+  integrity sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ==
+
 lodash.debounce@^4.0.8:
   version "4.0.8"
   resolved "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz"
   integrity sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==
+
+lodash.pick@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.pick/-/lodash.pick-4.4.0.tgz#52f05610fff9ded422611441ed1fc123a03001b3"
+  integrity sha512-hXt6Ul/5yWjfklSGvLQl8vM//l3FtyHZeuelpzK6mm99pNvN9yTDruNZPEJZD1oWrqo+izBmB7oUfWgcCX7s4Q==
+
+lodash.startcase@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.startcase/-/lodash.startcase-4.4.0.tgz#9436e34ed26093ed7ffae1936144350915d9add8"
+  integrity sha512-+WKqsK294HMSc2jEbNgpHpd0JfIBhp7rEV4aqXWqFr6AlXov+SlcgB1Fv01y2kGe3Gc8nMW7VA0SrGuSkRfIEg==
 
 lru-cache@^10.2.0:
   version "10.4.3"
@@ -862,6 +921,11 @@ magic-string@^0.30.11:
   integrity sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==
   dependencies:
     "@jridgewell/sourcemap-codec" "^1.5.0"
+
+marked@^4.2.4:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-4.3.0.tgz#796362821b019f734054582038b116481b456cf3"
+  integrity sha512-PRsaiG84bK+AMvxziE/lCFss8juXjNaWzVbN5tXAm4XjeaS9NAHhop+PjQxz2A9h8Q4M/xGmzP8vqNwy6JeK0A==
 
 merge2@^1.3.0:
   version "1.4.1"
@@ -1259,6 +1323,13 @@ vite@^6.0.5:
     rollup "^4.23.0"
   optionalDependencies:
     fsevents "~2.3.3"
+
+vue-router@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.5.0.tgz#58fc5fe374e10b6018f910328f756c3dae081f14"
+  integrity sha512-HDuk+PuH5monfNuY+ct49mNmkCRK4xJAV9Ts4z9UFc4rzdDnxQLyCMGGc8pKhZhHTVzfanpNwB/lwqevcBwI4w==
+  dependencies:
+    "@vue/devtools-api" "^6.6.4"
 
 vue@^3.5.13:
   version "3.5.13"

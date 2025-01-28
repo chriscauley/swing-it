@@ -14,7 +14,7 @@ const options = {
 
 if (process.env.NODE_ENV === 'development') {
   options.server = {
-    host: 'swing.localhost',
+    host: 'as.localhost',
     port: '9909',
     proxy: {
       '/api': {
@@ -27,6 +27,8 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 if (process.env.NODE_ENV === 'production') {
+  console.log(1)
+  options.base = '/static/'
   options.publicPath = '/static/'
 }
 export default defineConfig(options)

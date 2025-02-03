@@ -1,8 +1,10 @@
+import bar from './bar'
 import pose from './pose'
 
 const store = {}
 
 const modules = {
+  bar,
   pose,
 }
 

@@ -1,0 +1,21 @@
+import os, django
+os.environ['DJANGO_SETTINGS_MODULE'] = 'main.settings'
+django.setup()
+
+from dance.models import Pose
+
+LC_OUT_HEART = [
+    "lc_chin",
+    "lc_backpack",
+    "lc_elbows",
+    "lc_cast",
+    "lc_swing",
+]
+
+LC_FMOON = [
+    "lc_sky",
+    "lc_out",
+    "lc_earth",
+    "lc_chest",
+]
+oo

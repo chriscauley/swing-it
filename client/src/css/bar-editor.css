@@ -1,0 +1,17 @@
+.bar-editor__pose-box {
+  @apply flex gap-8;
+  .btn {
+    @apply block;
+  }
+}
+
+.bar-detail {
+  @apply flex p-2;
+  &__count {
+    @apply border-4 flex-grow p-2;
+    width: 150px;
+    &.-current {
+      @apply border-green-200
+    }
+  }
+}

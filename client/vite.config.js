@@ -2,11 +2,14 @@ import { fileURLToPath, URL } from "url"
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
+const _url = (s) => fileURLToPath(new URL('./' + s, import.meta.url))
+
 const options = {
   plugins: [vue()],
   resolve: {
     alias: [
-      { find: '@', replacement: fileURLToPath(new URL('./src', import.meta.url)) },
+      { find: '@', replacement: _url('./src', import.meta.url) },
+      { find: "jsonschema", replacement: _url("./node_modules/jsonschema") },
     ]
   }
 }

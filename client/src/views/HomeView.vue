@@ -1,18 +1,22 @@
 <template>
   <div>
-    <unrest-schema-form form_name="schema/bar" />
+    <bar-editor
+      :bar="selected_bar"
+    />
   </div>
 </template>
 
 <script>
-
 export default {
-  methods: {
-    deleteItem(item) {
-      this.$ui.alert()
-      this.$ui.confirm()
-      this.$ui.addToast("Hello")
-      this.$ui.toast.warning("Hello")
+  data() {
+    return {
+      selected_bar: null,
+      current_index: 0,
+    }
+  },
+  computed: {
+    bars() {
+      return []
     }
   }
 }

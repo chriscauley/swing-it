@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 
-from .poses import LIMB_BY_POSE
+from .poses import LIMBS
 
 
-def pose(request):
-    return JsonResponse(LIMB_BY_POSE)
+def limb(request):
+    return JsonResponse({'data': LIMBS})

@@ -1,4 +1,15 @@
+# server
 *.pyc
+db.sqlite3
+.static/*
+
+## client
+node_modules
+dist
+dist-ssr
+*.local
+
+## everything from here is vite boiler plate
 
 ## From vite create
 # Logs
@@ -9,11 +20,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
 
 # Editor directories and files
 .vscode/*

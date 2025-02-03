@@ -1,3 +1,6 @@
+* Todo
+** Bar editor lets you add and remove poses from a given bar
+** Song editor let's you copy parts of a song
 * models
 ** Video - A youtube video
    - can contain several songs

@@ -1,8 +1,6 @@
 <template>
   <div>
-    <bar-editor
-      :bar="selected_bar"
-    />
+    <bar-editor :bar="selected_bar" />
   </div>
 </template>
 
@@ -17,7 +15,7 @@ export default {
   computed: {
     bars() {
       return []
-    }
-  }
+    },
+  },
 }
 </script>

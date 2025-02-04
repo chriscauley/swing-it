@@ -8,10 +8,19 @@
 .bar-detail {
   @apply flex p-2;
   &__count {
-    @apply border-4 flex-grow p-2;
+    @apply border-4 flex flex-col p-2 relative;
     width: 150px;
     &.-current {
       @apply border-green-200
+    }
+    .btn.-empty {
+      pointer-events: none;
+    }
+    .bar-detail__select-count {
+      @apply absolute hidden right-0 top-0;
+    }
+    &:hover .bar-detail__select-count {
+      @apply block;
     }
   }
 }

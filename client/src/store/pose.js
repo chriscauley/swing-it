@@ -1,4 +1,4 @@
-import {capitalize } from 'lodash'
+import { capitalize } from 'lodash'
 import { RestStorage } from '@unrest/vue-storage'
 
 const replaces = [
@@ -14,8 +14,8 @@ const replaces = [
 
 export default () => {
   const storage = RestStorage('schema/pose', { collection_slug: 'schema/pose' })
-  storage.api.fetch('limb').then(r => {
-    const limbs = storage.api.state.limbs = {ALL: []}
+  storage.api.fetch('limb').then((r) => {
+    const limbs = (storage.api.state.limbs = { ALL: [] })
     r.data.forEach((slug) => {
       limbs[slug] = {
         slug,
@@ -25,11 +25,11 @@ export default () => {
     })
   })
   storage.getLookup = () => {
-    const { items=[] } = storage.getPage({ query: { per_page: 1e8 } }) || {}
+    const { items = [] } = storage.getPage({ query: { per_page: 1e8 } }) || {}
     const by_limb = {}
     const by_id = {}
     const by_slug = {}
-    items.forEach(({...i}) => {
+    items.forEach(({ ...i }) => {
       i.short = i.name
       replaces.forEach(([a, b]) => {
         i.short = i.short.replace(a, b)

@@ -1,9 +1,5 @@
 <template>
-  <div
-    :class="cls"
-    @mouseover="hovering=true"
-    @mouseout="hovering=false"
-  >
+  <div :class="cls" @mouseover="hovering = true" @mouseout="hovering = false">
     {{ limb.note?.short || '..' }}
   </div>
 </template>
@@ -24,7 +20,7 @@ export default {
         return 'btn -empty -text'
       }
       return this.hovering ? 'btn -danger' : 'btn -primary'
-    }
+    },
   },
 }
 </script>

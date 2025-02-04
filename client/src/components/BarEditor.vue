@@ -6,12 +6,15 @@
         :key="index"
         :class="css.count(count, index)"
         >
-        <div v-for="limb in makeLimbs(count)" :key="limb">
-          <div
-            :class="limb.cls"
-            @click="removeLimb(limb)"
-            >{{ limb.note?.short || '..' }}</div>
-        </div>
+        <pose-button
+          v-for="limb in makeLimbs(count, index)"
+          :key="limb"
+          :limb="limb"
+          @click="removeLimb(limb, count)"
+        />
+        <button class="btn -success bar-detail__select-count" @click="current_count=index">
+          <i class="fa fa-check" />
+        </button>
       </div>
     </div>
     <div class="bar-editor__pose-box">
@@ -32,11 +35,14 @@
 <script>
 import { range } from 'lodash'
 
+import PoseButton from './PoseButton.vue'
+
 const newBar = () => ({
   counts: range(8).map(() => [])
 })
 
 export default {
+  components: { PoseButton },
   data() {
     const css = {
       count: (count, index) => [
@@ -48,6 +54,7 @@ export default {
     return {
       bar: newBar(),
       current_count: 0,
+      hovering: null,
       css,
     }
   },
@@ -67,8 +74,7 @@ export default {
       }))
       count.map((id) => {
         const note = {...this.lookup.by_id[id]}
-        const limb = limbs.find(limb => console.log(note.limb, limb) ||limb.slug === note.limb)
-        limb.cls = 'btn -primary'
+        const limb = limbs.find(limb => limb.slug === note.limb)
         limb.note = note
       })
       return limbs
@@ -86,6 +92,9 @@ export default {
         }
         count.push(pose.id)
       }
+    },
+    removeLimb(limb, count) {
+      count.splice(count.indexOf(limb.note.id), 1)
     }
   }
 }

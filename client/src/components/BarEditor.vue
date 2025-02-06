@@ -8,9 +8,11 @@
           :limb="limb"
           @click="removeLimb(limb, count)"
         />
-        <button class="btn -success bar-detail__select-count" @click="current_count = index">
-          <i class="fa fa-check" />
-        </button>
+        <div class="bar-detail__select-count" @click="current_count = index">
+          <button class="btn -success">
+            <i class="fa fa-check" />
+          </button>
+        </div>
       </div>
     </div>
     <div class="bar-editor__pose-box">

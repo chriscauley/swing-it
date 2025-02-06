@@ -11,16 +11,25 @@
     @apply border-4 flex flex-col p-2 relative;
     width: 150px;
     &.-current {
-      @apply border-green-200
+      @apply border-green-200;
     }
     .btn.-empty {
       pointer-events: none;
     }
     .bar-detail__select-count {
-      @apply absolute hidden right-0 top-0;
+      @apply absolute cursor-pointer hidden inset-0;
+      .btn {
+        @apply absolute right-0 top-0;
+      }
     }
-    &:hover .bar-detail__select-count {
-      @apply block;
+    &:hover {
+      .bar-detail__select-count {
+        @apply block;
+        background: rgba(0,0,255,0.5);
+      }
+      &.-current .bar-detail__select-count {
+        @apply hidden;
+      }
     }
   }
 }
